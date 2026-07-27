@@ -1,13 +1,13 @@
-const cards = document.querySelectorAll('.game-card'); 
 var card_1 =null;
 var card_2 =null;   
 var lock = false;
 var score = 0;
 var tries = 0;
 var len = 16;
+const cards = document.querySelectorAll('.game-card'); 
 cards.forEach(card => {
     card.addEventListener('click', () => {
-       
+        
       //  console.log(length);
         if(card.classList.contains('flip')){  
            //     console.log("opened");
@@ -15,8 +15,9 @@ cards.forEach(card => {
         }
         if (lock){
             return;
-        }
+        }   
 
+        
         card.classList.add('flip');
         if(card_1 === null){
             card_1 = card;
@@ -69,21 +70,18 @@ function restartGame(){
     });
 
     wrongT.textContent = tries;
-
-    requestAnimationFrame(() => {
         setTimeout(() => {
             shuffle(len);
             lock = false;
         }, 500);
-    });
 }
 
 function  showWins(){
     setTimeout(() => { 
-       var win=  confirm("You won the game! Do you want to restart?");
-       if(win){
-           restartGame();
-       }
+        var win=  confirm("You won the game! Do you want to restart?");
+        if(win){
+            restartGame();
+        }
     }, 1000);
 }
 
@@ -97,13 +95,13 @@ function wrongTries(){
 // SHUFFLE CARDS
 function shuffle(length=16)
 {
-            
             cards.forEach(card => {
             var order = Math.floor(Math.random() * length);
             card.style.order = order;   
         });
 
 }
+
 shuffle();
 
 

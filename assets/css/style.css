@@ -21,7 +21,7 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    perspective: 1000px;
+    perspective: 800px;
 }
 
 .game-card{
@@ -50,6 +50,7 @@ body{
 .image-game-1{
     transform: rotateY(180deg); 
 }
+
 .flip{
     transform: rotateY(180deg);
     
@@ -87,7 +88,6 @@ body{
     display: none;
     grid-template-columns: repeat(6, 1fr);
     width: 850px;
-
 }
 
 .level2-btn , .level1-btn{
